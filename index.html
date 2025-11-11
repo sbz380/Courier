@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Giornalino dell'Oratorio</title>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Impact", sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 0;
+}
+
+/* Sfondo animato con dissolvenza e blur */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideBlurBackground 20s infinite;
+    z-index: -1;
+}
+
+@keyframes slideBlurBackground {
+    0%   { background-image: url('IMG_1458.jpeg'); filter: blur(10px); }
+    12.5% { filter: blur(0px); }
+    25%  { background-image: url('IMG_1459.jpeg'); filter: blur(10px); }
+    37.5% { filter: blur(0px); }
+    50%  { background-image: url('IMG_1460.jpeg'); filter: blur(10px); }
+    62.5% { filter: blur(0px); }
+    75%  { background-image: url('IMG_1461.jpeg'); filter: blur(10px); }
+    87.5% { filter: blur(0px); }
+    100% { background-image: url('IMG_1458.jpeg'); filter: blur(10px); }
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    z-index: 1;
+}
+
+/* Griglia dei mesi e foto centrale */
+.grid-wrapper {
+    display: grid;
+    grid-template-areas: 
+        "m1 m2 m3"
+        "m4 center m5"
+        "m6 m7 m8";
+    grid-gap: 10px;
+    width: 90vw;
+    max-width: 1200px;
+    height: 70vh;
+    justify-items: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+/* Pulsanti mesi */
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    border: 3px solid #000;
+    box-shadow: 7px 7px 14px rgba(0,0,0,0.6), -7px -7px 14px #ffffff;
+    background: rgba(224, 224, 224, 0.9);
+    text-decoration: none;
+    color: #222;
+    text-align: center;
+    padding: 10px 15px;
+    transition: 0.25s ease-in-out;
+}
+
+.grid-item:hover {
+    box-shadow: inset 7px 7px 14px rgba(0,0,0,0.6), inset -7px -7px 14px #ffffff;
+}
+
+/* Foto centrale */
+.center {
+    grid-area: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.center img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 7px 7px 20px #bebebe, -7px -7px 20px #ffffff;
+}
+
+/* Mesi */
+.m1 { grid-area: m1; width: 100%; height: 100px; max-width: 250px; }
+.m2 { grid-area: m2; width: 100%; height: 100px; max-width: 250px; }
+.m3 { grid-area: m3; width: 100%; height: 100px; max-width: 250px; }
+.m4 { grid-area: m4; width: 100%; height: 100px; max-width: 250px; }
+.m5 { grid-area: m5; width: 100%; height: 100px; max-width: 250px; }
+.m6 { grid-area: m6; width: 100%; height: 100px; max-width: 250px; }
+.m7 { grid-area: m7; width: 100%; height: 100px; max-width: 250px; }
+.m8 { grid-area: m8; width: 100%; height: 100px; max-width: 250px; }
+
+/* Pulsante sito parrocchia */
+.parish-btn {
+    margin: 30px 0;
+    padding: 15px 35px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    border: 3px solid #000;
+    background: rgba(224, 224, 224, 0.95);
+    box-shadow: 7px 7px 14px rgba(0,0,0,0.6), -7px -7px 14px #ffffff;
+    color: #222;
+    text-decoration: none;
+    transition: 0.25s ease-in-out;
+}
+
+.parish-btn:hover {
+    box-shadow: inset 7px 7px 14px rgba(0,0,0,0.6), inset -7px -7px 14px #ffffff;
+}
+</style>
+</head>
+<body>
+
+<h1>Giornalino dell'Oratorio della Comunità parrocchiale di San Sisto- Lacugnano- S.Andrea delle Fratte</h1>
+
+<div class="grid-wrapper">
+    <a href="nov.html" class="grid-item m1">Novembre 2025</a>
+    <a href="#" class="grid-item m2">Dicembre 2025</a>
+    <a href="#" class="grid-item m3">Gennaio 2026</a>
+    <a href="#" class="grid-item m4">Febbraio 2026</a>
+    <div class="grid-item center"><img src="IMG_1445.jpeg" alt="Foto centrale"></div>
+    <a href="#" class="grid-item m5">Marzo 2026</a>
+    <a href="#" class="grid-item m6">Aprile 2026</a>
+    <a href="#" class="grid-item m7">Maggio 2026</a>
+    <a href="#" class="grid-item m8">Giugno 2026</a>
+</div>
+
+<!-- Pulsante sito parrocchia -->
+<a href="https://www.sentinelleanspisansisto.it/" class="parish-btn" target="_blank" rel="noopener noreferrer">
+    Visita il sito della parrocchia
+</a>
+
+</body>
+</html>

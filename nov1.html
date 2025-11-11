@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>San Sisto riparte - Articolo</title>
+  <style>
+    /* Reset leggero */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      color: #222;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    /* Layout a due colonne: articolo a sinistra (grande), immagini a destra (colonna stretta) */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      height: calc(100vh - 40px); /* full viewport minus padding */
+    }
+
+    /* Box grande scorriabile che occupa tutta la colonna sinistra */
+    .article-box {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(16,40,80,0.08);
+      padding: 34px;
+      overflow-y: auto; /* scroll */
+      -webkit-overflow-scrolling: touch;
+      font-size: 18px;
+    }
+
+    /* Titolo stile "giornale" luminoso */
+    .article-box h1 {
+      font-size: 28px;
+      margin-bottom: 14px;
+      color: #0b5a8a;
+      letter-spacing: -0.5px;
+    }
+
+    .article-box p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    .article-box p.lead {
+      font-weight: 600;
+      font-size: 20px;
+      color: #113f64;
+    }
+
+    /* Colonna immagini */
+    .images-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: stretch;
+      height: 100%;
+    }
+
+    .images-col .img-card {
+      background: linear-gradient(180deg, #ffffff, #fbfdff);
+      border-radius: 10px;
+      padding: 8px;
+      box-shadow: 0 6px 18px rgba(12,36,80,0.06);
+      flex: 1 1 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .images-col img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Responsive: su schermi piccoli le immagini vanno sotto l'articolo */
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; grid-auto-rows: auto 260px; }
+      .images-col { flex-direction: row; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+      .images-col .img-card { min-width: 260px; height: 100%; flex: 0 0 auto; }
+      .article-box { height: auto; max-height: calc(100vh - 320px); }
+    }
+    
+    /* Piccoli dettagli tipografici */
+    .byline { margin-top: 6px; margin-bottom: 18px; color: #6b7280; font-size: 14px; }
+    .highlight { color: #c84b4b; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="article-box" role="main" aria-label="Articolo San Sisto">
+      <!-- Titolo (come richiesto) -->
+      <h1>SAN SISTO RIPARTE: STORIA DI UN INIZIO CHE PROFUMA DI CASA</h1>
+
+      <!-- Testo integrale (riportato esattamente come fornito) -->
+      <p>C’è un giorno che resta negli occhi. Un giorno che non si dimentica perché ha il sapore dei sorrisi sinceri. Quel giorno è stato il 18 ottobre, quando la nostra comunità parrocchiale di San Sisto, Perugia, ha celebrato la Messa di inizio mandato. Una celebrazione piena. Piena di volti, di colori, di nomi, di respiri. Piena di attese. Piena di promesse. La chiesa sembrava più grande. O forse eravamo noi ad essere più larghi nell’anima. C’erano giovani, molti. C’erano famiglie, venute così come sono, con i bambini che non stanno mai fermi e con i genitori che imparano ogni giorno ad amare ancora. C’erano catechisti, operatori pastorali, amici venuti per sostenere, volti che non appartengono anagraficamente a questa parrocchia, ma che lo sono per affetto, per vicinanza, per stima. Una comunità viva. Una comunità che riparte.
+      Una comunità che si riconsegna il Vangelo ogni giorno, come si consegna un dono fragile e potente al tempo stesso.</p>
+
+      <p>Ripartire significa soprattutto riprendere a seminare. Sono stati attivati i corsi dell’Iniziazione Cristiana: un cammino che non è un insieme di appuntamenti da spuntare, ma una storia di incontri e di cuori che si aprono. La preparazione alla prima confessione e alla prima comunione non è solo un programma liturgico, ma una scoperta progressiva della bellezza dell’amore di Dio. I bambini delle elementari, insieme ai loro catechisti, hanno ricominciato a camminare. Passo dopo passo, capitolo dopo capitolo, domanda dopo domanda, sorriso dopo sorriso. Ci sono anche loro, i ragazzi delle medie.</p>
+
+      <p>Annate vivaci, difficili, splendide. Tre anni di soglie, prove, cambiamenti. Tre anni in cui la fede sembra a volte una domanda lontana, e invece è una domanda vicinissima, solo che brucia sotto la pelle. Il cammino li porta piano piano alla preparazione della Cresima e poi all’ingresso nella prima classe delle superiori. Un passaggio grande. Una porta che si apre. Una scelta che comincia a diventare consapevole. Ed è qui che accade una cosa preziosa: i giovani non vengono lasciati soli.</p>
+
+      <p>Molti animatori – ragazzi e ragazze che, anni fa, hanno ricevuto cura, ascolto, sostegno – hanno deciso di dire il loro sì.
+      Non un sì stanco. Non un sì per abitudine.
+      Un sì grato. Perché nella parrocchia si sono sentiti visti. Si sono sentiti voluti bene.
+      Si sono sentiti unici, in un mondo che corre e che spesso non guarda nessuno negli occhi. E questa gratitudine è diventata servizio. Un servizio gioioso. Non perfetto, non programmato in ogni dettaglio, ma vivo. Loro sono la prova che nessun gesto di amore, nessun ascolto sincero, nessun abbraccio offerto in tempo utile va perso.</p>
+
+      <p>Ci vuole coraggio per mettersi a disposizione degli altri. Loro questo coraggio lo hanno avuto. E così la parrocchia diventa una casa con molte stanze, dove i giovani non sono riempiti, ma accompagnati. Dove possono crescere, sbagliare, ripartire. Dove la fede non è una lezione, ma un respiro quotidiano.</p>
+
+      <p>Ma non ci si ferma ai ragazzi. In parrocchia sono ripresi anche i cammini per le scuole superiori. Sono percorsi preziosi. Qui si impara a camminare da soli, anche se mai senza qualcuno accanto. Si impara che la vita è scelta. Che la fede è libertà. Che Dio non vuole trattenere ma liberare. È il tempo in cui le domande diventano più grandi.
+      Tempo di identità, di amicizie che segnano, di sogni che si affacciano timidi o rumorosi.
+      È il tempo in cui il cuore vuole capire se può fidarsi ancora. Come una mano che si lascia andare, perché il cammino dell’altro deve diventare suo. Ma quella mano, se torni, la trovi ancora.</p>
+
+      <p>L’evangelizzazione dei giovani e dei giovani adulti è ripartita il 13 ottobre.
+      Non è un gruppo chiuso. Non è un club. Non è una cerchia di iniziati. È un invito. Aperto, semplice, diretto. Un invito per chi cerca, per chi non trova, per chi ha smesso di cercare, per chi vuole ricominciare. Viviamo in un mondo dove la pastorale sacramentale non è più scontata. Ma il bisogno di senso è forte. Fortissimo. E la domanda che brucia resta sempre la stessa: perché vivo?
+      La comunità di San Sisto prova a dare risposte vere. Non facili. Non prefabbricate.
+      Vere. E queste risposte nascono da ascolto, preghiera, testimonianza. Da una Parola che è più antica di noi e più giovane dei nostri desideri.</p>
+
+      <p>Il Centro d’Ascolto continua ad essere un cuore che batte forte, due volte alla settimana: martedì e sabato.
+      Molte persone arrivano a chiedere.
+      Ma chi chiede, in realtà, porta. Porta storie.
+      Porta ferite. Porta dignità. Porta speranza.
+      Porta qualcosa che ci cambia. Chi accoglie, spesso, riceve più di quanto dona.
+      È una circolarità di gratitudine.
+      È un mistero semplice e potente: dove c’è dono, c’è sempre ritorno.
+      Nessuno si salva da solo.Questa opera non è un’attività accessoria: è il cuore del Vangelo.</p>
+
+      <p>È iniziato anche il corso prematrimoniale.
+      Quasi venti coppie.
+      Ventiquattro occhi che si guardano e cercano di capire cosa significhi amare davvero. Amare non è un giorno. Eppure c’è un giorno in cui l’amore si dice, si promette, si consegna. Un giorno che resta.Forse non è l’ultimo. Ma è il primo. Un giorno scelto.
+      Voluto. Atteso.</p>
+
+      <p>La parrocchia di San Sisto è tutto questo.
+      Un intreccio di voci. Un mosaico di storie.
+      Un campo pieno di semi che stanno germogliando. Ci sono mani che preparano.
+      Voci che spiegano. Cuori che pregano.
+      Passi che si mettono in cammino.
+      La comunità non è perfetta. Non deve esserlo. È viva. E questo basta.
+      La sua forza sta nel fatto che ci crede.
+      Ci crede davvero. Crede che il Vangelo sia ancora capace di parlare. Che l’amore possa ancora cambiare le vite. Che i giovani siano un dono e non un problema. Che la carità sia il linguaggio più universale e più umano. Perché il Signore continua a passare. E quando passa, lascia tracce.
+      Noi le stiamo seguendo. Insieme.</p>
+    </main>
+
+    <!-- Colonna immagini -->
+    <aside class="images-col" aria-label="Immagini articolo">
+      <div class="img-card">
+        <img src="IMG_1466.jpeg" alt="IMG 1466 - San Sisto">
+      </div>
+      <div class="img-card">
+        <img src="IMG_1467.jpeg" alt="IMG 1467 - San Sisto">
+      </div>
+      <div class="img-card">
+        <img src="IMG_1468.jpeg" alt="IMG 1468 - San Sisto">
+      </div>
+    </aside>
+  </div>
+
+  <!-- Piccolo script per migliorare l'accessibilità: focus sul box scroll -->
+  <script>
+    // Se l'utente preme "A" mette il focus sull'articolo per consentire lo scroll via tastiera.
+    document.addEventListener('keydown', function(e){
+      if(e.key.toLowerCase() === 'a'){
+        const article = document.querySelector('.article-box');
+        if(article) article.focus();
+      }
+    });
+    // Rendiamo l'articolo focusabile
+    document.querySelector('.article-box').setAttribute('tabindex','0');
+  </script>
+</body>
+</html>
